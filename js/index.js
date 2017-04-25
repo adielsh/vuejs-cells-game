@@ -19,6 +19,7 @@ var app = new Vue({
     }
   },
   mounted(){
+    this.screen=0
     this.start()
  
   },
