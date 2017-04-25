@@ -1,0 +1,39 @@
+<div id="app" >
+  
+  <div class="before-screen" v-if="screen==0">
+    <h1 class="text-center">חפרפרות</h1>
+    <h5 class="text-center">המטרה: להספיק ללחוץ בזמן על התאים האדומים </h5>
+    <input type="button" class="btn btn-primary center" value="התחל משחק" @click="screen=1"></input>
+  </div>
+
+  
+  <div class="before-screen" v-if="screen==2">
+    <h1 class="text-center">תם הזמן</h1>
+    <h5 class="text-center">תוצאתך: {{this.scores}} </h5>
+ <input type="button" class="btn btn-primary center" value="משחק חדש" @click="start"></input>
+    
+    
+  </div>
+ 
+  <div v-if="screen==1" class="game-screen container ">
+    
+    <div class="row row-centered">
+      <div class="col-md-4"></div>
+      <div class="col-md-2 col-centered">
+   <select v-model="speed" class="form-control pull-right" dir="rtl">
+    <option value="1000" >קל</option>
+    <option value="750" >בינוני</option>
+    <option value="500">קשה</option>
+  </select>
+      </div>
+      <div class="col-md-2">
+        <h5 class="center">רמת משחק</h5> 
+      </div>
+    </div>
+  <h5 class="text-center" >נקודות: {{scores}}</h5>
+<div class="game-container center">
+  <square v-for="n in numCells" :active="chosen == n ? true : false" :cellNum="n" @clicked="clicked" ></square> 
+ 
+</div>
+  </div>
+</div>
