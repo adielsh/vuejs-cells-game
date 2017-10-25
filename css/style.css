@@ -24,6 +24,9 @@ after-cell{
     lightgray; 
   border-radius: 25px;
 }
+.cell:hover {
+  box-shadow: 10px 10px 5px #888888;
+}
 .cell:focus {
   outline:0;
 }
