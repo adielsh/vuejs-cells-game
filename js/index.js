@@ -28,16 +28,16 @@ var app = new Vue({
     {
        this.screen = 1
        clearTimeout(this.speedTimeHandler)
-      clearTimeout(this.gameTimeHandler)
-      this.gameTimeHandler = setTimeout(this.finish,10000)
+       clearTimeout(this.gameTimeHandler)
+       this.gameTimeHandler = setTimeout(this.finish,10000)
        this.scores= 0
        this.render()
     },
     finish()
     {
       this.screen=2
-    
     },
+      
     clicked(cell){
       if(this.clickFlag){
       if(cell)
@@ -46,13 +46,10 @@ var app = new Vue({
       }
       else this.scores-=5
       }
-     this.clickFlag = false
      this.clickFlag = this.rand()
-    
     }, 
  
-    rand(){
-      
+    rand(){   
      let randNum =  _.random(this.numCells);
      this.chosen = randNum;
      return true
