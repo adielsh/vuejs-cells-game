@@ -1,6 +1,6 @@
 let square =
     {
-      props:["active","cellNum"],
+     props:["active","cellNum"],
      template:"<div class='cell' :class='{red:active}' @click='clicked'></div>",
       methods:{
         clicked(){
