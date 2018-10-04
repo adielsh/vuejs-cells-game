@@ -1,6 +1,6 @@
 var square =
     {
-      props:["active","cellNum"],
+     props:["active","cellNum"],
      template:"<div class='cell' :class='{red:active}' @click='clicked'></div>",
       methods:{
         clicked(){
@@ -9,7 +9,7 @@ var square =
               },
     };
 
-var app = new Vue({
+let app = new Vue({
   el:"#app",
   data:{numCells:9,active:false,chosen:null,scores:0,speed:1000,speedTimeHandler:null,gameTimeHandler:null,clickFlag:true,screen:0},
   components:{Square:square},
